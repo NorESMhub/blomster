@@ -1,0 +1,15 @@
+format: jb-book
+root: index
+chapters:
+- file: timeseries/intro.ipynb
+  sections:
+  - file: timeseries/transports.ipynb
+  - file: timeseries/global_averages.ipynb
+  - file: timeseries/AMOC.ipynb
+- file: climatologies/intro.ipynb
+  sections:
+  - file: climatologies/annual.ipynb
+  - file: climatologies/seasonal.ipynb
+- file: ENSO/intro.ipynb
+  sections:
+  - file: ENSO/ENSO.ipynb

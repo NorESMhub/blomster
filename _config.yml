@@ -1,0 +1,41 @@
+#######################################################################################
+# A default configuration that will be loaded for all jupyter books
+# See the documentation for help and more options: 
+# https://jupyterbook.org/customize/config.html
+
+#######################################################################################
+# Book settings
+title                       : BLOMSTER
+author                      : noresm-ncc@met.no
+copyright                   : "2026"
+logo                        : data/logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+  timeout: 300  # Increase timeout to 5 minutes
+  allow_errors: false
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/NorESMhub/blomster
+  path_to_book: .   # Optional path to your book, relative to the repository root
+  branch: master    # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: false
+  use_repository_button: true
+  home_page_in_navbar: true
+
+exclude_patterns:
+  - notebooks/*.ipynb
+
+only_build_toc_files: true

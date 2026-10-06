@@ -1,0 +1,33 @@
+# ---------------------------------------- #
+#     Configuration for the diagnostics
+# ---------------------------------------- #
+
+format: jb-book
+root: index# Variables needed as default
+vars:
+  climo: ['tos','mld']
+  timeseries: ['tos','mld']
+
+# Table of content
+chapters:
+  - file: timeseries/intro.ipynb
+    sections:
+      - file: timeseries/transports.ipynb
+      - file: timeseries/global_averages.ipynb
+      - file: timeseries/AMOC.ipynb
+        vars: 
+          timeseries: ['mmflxd', 'mmflxl','mmftdd', 'mmftdl', 'mmfsmd']
+  - file: climatologies/intro.ipynb
+    sections:
+      - file: climatologies/annual.ipynb
+        vars:
+          climo: ['tos','mld']
+      - file: climatologies/seasonal.ipynb
+  - file: ENSO/intro.ipynb
+    sections:
+       - file: ENSO/ENSO.ipynb
+  - file: MOC/intro.md
+    sections:
+      - file: MOC/MOC.ipynb
+  - file: meridional_fluxes/meridional_fluxes.ipynb
+  - file: zonal_mean/zonal_mean.ipynb

@@ -1,0 +1,10 @@
+# ---------------------------------------- #
+#     Configuration for the simulation
+# ---------------------------------------- #
+casename        : n1850GaxgGHG.LM.n30b24.517.20260911
+datapath        : /nird/datalake/noresm3/cases
+www_root        : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
+output_root     : /scratch/yanchun/diagnostic/blomster
+year_start      : 1456
+year_end        : 1475
+
