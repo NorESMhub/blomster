@@ -37,7 +37,7 @@ jupyter-book build -qq -n .
 # Publish
 # backup configs 
 mkdir _build/config
-cp _config.yml _toc.yml diagnostics.yml _build/config
+cp _config.yml _toc.yml recipe.yml _build/config
 # copy and sync
 chmod -R g+w _build/html
 if [ $gid == 'null' ]; then
@@ -52,7 +52,7 @@ else
 fi
 
 # cleanup
-for nbdir in $(cat diagnostics.yml|grep '\- file: ' |cut -d: -f2 |awk -F/ '{print $(NF-1)}' |uniq)
+for nbdir in $(cat recipe.yml|grep '\- file: ' |cut -d: -f2 |awk -F/ '{print $(NF-1)}' |uniq)
 do
   echo $nbdir
   #rm -rf $nbdir
