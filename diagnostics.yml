@@ -1,28 +1,57 @@
-# ---------------------------------------- #
-#     Configuration for the diagnostics
-# ---------------------------------------- #
+# ---------------------------------------- 
+#   Configuration for the simulation
+# ----------------------------------------
+experiment:
+  casename    : n1850GaxgGHG.LM.nor30b25.528.20260928
+  input_root  : /nird/datalake/NS9560K/noresm3/cases
+  www_root    : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
+  output_root : /scratch/yanchun/diagnostic/blomster
+  year_start  : 1596
+  year_end    : 1600
 
-format: jb-book
-root: index# Variables needed as default
-vars:
-  climo: ['tos','mld']
-  timeseries: ['tos','mld']
+# ----------------------------------------
+#   Configuration for required variables
+# ----------------------------------------
+variables:    # required variables
+  models:     # model component
+    blom:     # ocean component
+      hy:     # file tag
+        climo: ['templvl','salnlvl',
+          'uvellvl','vvellvl',
+          'idlagelvl']
+        timeseries: []
+      hm:
+        climo: ['sst','sss',
+          'mldb04']
+        timeseries: ['sstga','sssga','tempga','salnga',
+          'volgs','massgs',
+          'masstr','heattr','salttr',
+          'mhflx','mhftd','mhfsm','mhfld',
+          'msflx','msftd','msfsm','msfld',
+          'mmflxl','mmftdl','mmfsml',
+          'mmflxd','mmftdd','mmfsmd']
+    hamocc:
+      hbgcy:
+        climo: ['co2fxd','co2fxu']
+        timeseries: ['co2fxd','co2fxu']
+      hbgcm:
+        climo: []
+        timeseries: []
 
-# Table of content
-chapters:
+# ----------------------------------------
+#   Jupyter notebooks for diagnostics
+# ----------------------------------------
+diagnostics:
   - file: timeseries/intro.ipynb
     sections:
       - file: timeseries/transports.ipynb
       - file: timeseries/global_averages.ipynb
       - file: timeseries/AMOC.ipynb
-        vars: 
-          timeseries: ['mmflxd', 'mmflxl','mmftdd', 'mmftdl', 'mmfsmd']
   - file: climatologies/intro.ipynb
     sections:
       - file: climatologies/annual.ipynb
-        vars:
-          climo: ['tos','mld']
       - file: climatologies/seasonal.ipynb
+      - file: climatologies/Arctic_Ocean.ipynb
   - file: ENSO/intro.ipynb
     sections:
        - file: ENSO/ENSO.ipynb
@@ -31,3 +60,4 @@ chapters:
       - file: MOC/MOC.ipynb
   - file: meridional_fluxes/meridional_fluxes.ipynb
   - file: zonal_mean/zonal_mean.ipynb
+
