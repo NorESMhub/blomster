@@ -27,24 +27,18 @@ umask 002
 source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
 conda activate /nird/datalake/NS16000B/blomster-env
 
-# inject parameters
-for pynb in $(ls notebooks/index.ipynb notebooks/*/*.ipynb); do
-#for pynb in $(ls notebooks/index.ipynb); do
-  subdir=$(dirname $pynb)
-  mkdir -p ${subdir/notebooks/.}
-  papermill --log-level ERROR --prepare-only -f experiment.yml $pynb ${pynb/notebooks/.}
-done
-
-# generate _toc.yml from diagnostics.yml
-python utils/toc.py
+# generate TOC and inject parameters to notebooks
+python configure.py
 
 # build the book
 jupyter-book clean .
 jupyter-book build -qq -n .
 
-# publish
+# Publish
+# backup configs 
 mkdir _build/config
-cp experiment.yml _config.yml _toc.yml _build/config
+cp _config.yml _toc.yml diagnostics.yml _build/config
+# copy and sync
 chmod -R g+w _build/html
 if [ $gid == 'null' ]; then
   echo "Generated diagnostics is under:"
@@ -58,4 +52,8 @@ else
 fi
 
 # cleanup
-
+for nbdir in $(cat diagnostics.yml|grep '\- file: ' |cut -d: -f2 |awk -F/ '{print $(NF-1)}' |uniq)
+do
+  echo $nbdir
+  #rm -rf $nbdir
+done
