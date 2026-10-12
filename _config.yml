@@ -8,7 +8,7 @@
 title                       : BLOMSTER
 author                      : noresm-ncc@met.no
 copyright                   : "2026"
-logo                        : data/logo.png
+logo                        : assets/logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
