@@ -1,6 +1,13 @@
-# ---------------------------------------- 
+# -----------------------------------------
+#   Configuration for the tool 
+# -----------------------------------------
+blomster:
+  version: 0.1
+  source_root: /nird/datalake/NS16000B/blomster
+
+# -----------------------------------------
 #   Configuration for the simulation
-# ----------------------------------------
+# -----------------------------------------
 experiment:
   caseid      : n1850GaxgGHG.LM.nor30b25.528.20260928
   input_root  : /nird/datalake/NS9560K/noresm3/cases
@@ -9,38 +16,37 @@ experiment:
   year_start  : 1596
   year_end    : 1600
 
-# ----------------------------------------
+# -----------------------------------------
 #   Configuration for required variables
-# ----------------------------------------
-variables:    # required variables
-  models:     # model component
-    blom:     # ocean component
-      hy:     # file tag
-        climo: ['templvl','salnlvl',
-          'uvellvl','vvellvl',
-          'idlagelvl']
-        timeseries: []
-      hm:
-        climo: ['sst','sss',
-          'mldb04']
-        timeseries: ['sstga','sssga','tempga','salnga',
-          'volgs','massgs',
-          'masstr','heattr','salttr',
-          'mhflx','mhftd','mhfsm','mhfld',
-          'msflx','msftd','msfsm','msfld',
-          'mmflxl','mmftdl','mmfsml',
-          'mmflxd','mmftdd','mmfsmd']
-    hamocc:
-      hbgcy:
-        climo: ['co2fxd','co2fxu']
-        timeseries: ['co2fxd','co2fxu']
-      hbgcm:
-        climo: []
-        timeseries: []
+# -----------------------------------------
+variables:  # required variables
+  blom:     # ocean component
+    hy:     # file tag
+      climo: ['templvl','salnlvl',
+        'uvellvl','vvellvl',
+        'idlagelvl']
+      timeseries: []
+    hm:
+      climo: ['sst','sss',
+        'mldb04']
+      timeseries: ['sstga','sssga','tempga','salnga',
+        'volgs','massgs',
+        'masstr','heattr','salttr',
+        'mhflx','mhftd','mhfsm','mhfld',
+        'msflx','msftd','msfsm','msfld',
+        'mmflxl','mmftdl','mmfsml',
+        'mmflxd','mmftdd','mmfsmd']
+  hamocc:
+    hbgcy:
+      climo: ['co2fxd','co2fxu']
+      timeseries: ['co2fxd','co2fxu']
+    hbgcm:
+      climo: []
+      timeseries: []
 
-# ----------------------------------------
+# -----------------------------------------
 #   Jupyter notebooks for diagnostics
-# ----------------------------------------
+# -----------------------------------------
 diagnostics:
   - file: timeseries/intro.ipynb
     sections:
@@ -60,4 +66,30 @@ diagnostics:
       - file: MOC/MOC.ipynb
   - file: meridional_fluxes/meridional_fluxes.ipynb
   - file: zonal_mean/zonal_mean.ipynb
+
+# -----------------------------------------
+#   Model grid files
+# -----------------------------------------
+grids:
+  tnx1v4:
+    data_root: /nird/datalake/NS16000B/blomster/grids/tnx1v4
+    grid_file: /nird/datalake/NS16000B/blomster/grids/tnx1v4/grid.nc
+    mask_nino3: /nird/datalake/NS16000B/blomster/grids/tnx1v4/mask_nino3.nc
+    mask_nino34: /nird/datalake/NS16000B/blomster/grids/tnx1v4/mask_nino34.nc
+
+# -----------------------------------------
+#   Observational datasets for benchmarking
+# -----------------------------------------
+datasets:
+  WOA13v2:
+    1deg:
+      data_root: /nird/datalake/NS16000B/blomster/datasets/WOA13/1deg
+  PHC3.0:
+    data_root: /nird/datalake/NS16000B/blomster/datasets/PHC3.0
+    ANNUAL_file:
+      /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_annual1.nc
+    SEASONAL_file:
+      /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_seasonal.nc
+    MONTHLY_file:
+      /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_annual.nc
 
