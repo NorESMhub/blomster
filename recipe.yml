@@ -12,7 +12,7 @@ experiment:
   caseid      : n1850GaxgGHG.LM.nor30b25.528.20260928
   input_root  : /nird/datalake/NS9560K/noresm3/cases
   work_root   : /scratch/yanchun/diagnostics/blomster
-  www_root    : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
+  www_root    : /nird/datapeak/NS9015K/www/diagnostics/blomster/yanchun
   year_start  : 1596
   year_end    : 1600
 
@@ -23,8 +23,8 @@ variables:  # required variables
   blom:     # ocean component
     hy:     # file tag
       climo: ['templvl','salnlvl',
-        'uvellvl','vvellvl',
         'idlagelvl']
+        #'uvellvl','vvellvl', # rotate first
       timeseries: []
     hm:
       climo: ['sst','sss',

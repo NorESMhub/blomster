@@ -6,13 +6,12 @@ caseid=$(cat recipe.yml |grep 'caseid' |cut -d: -f2 |sed 's/ //g')
 year_start=$(cat recipe.yml |grep 'year_start' |cut -d: -f2 |sed 's/ //g')
 year_end=$(cat recipe.yml |grep 'year_end' |cut -d: -f2 |sed 's/ //g')
 www_root=$(cat recipe.yml |grep 'www_root' |cut -d: -f2 |sed 's/ //g')
-gid=$(grep 'www_root' |cut -d/ -f4|tr '[A-Z]' '[a-z]')
 
-# set default value
-
-# check group id
-if ! id |grep -q $gid ; then
-  gid='null'
+project=$(echo $www_root |grep -oP 'NS\d+K' |tr '[:upper:]' '[:lower:]')
+if echo $www_root | grep 'datalake' ; then
+  dataservice='datalake'
+else
+  dataservice='datapeak'
 fi
 
 # set permission
@@ -35,16 +34,16 @@ cp _config.yml _toc.yml recipe.yml settings.yml _build/jupyter_execute/
 
 # Publish
 chmod -R g+w _build/html
-if [ $gid == 'null' ]; then
-  echo "Generated diagnostics is under:"
-  echo "$pwd/_build/html"
-  echo "It is not copied to ${www_root} since you do not blong to the 'ipcc' group or 'ns9560k' group."
-else
+if test -w ${www_root} ; then
   www_sub=${caseid}/yrs${year_start}to${year_end}-obs
   mkdir -p ${www_root}/${www_sub}
-  rsync -au --chown=$USER:$gid --delete --remove-source-files _build/html/ ${www_root}/${www_out}
+  rsync -au --delete --remove-source-files _build/html/ ${www_root}/${www_sub}
   echo 'Gedneratd diagnostics is at:'
-  echo "https://ns9560k.web.sigma2.no/datalake/diagnostics/blomster/${www_sub}"
+  echo "https://${project}.web.sigma2.no/${dataservice}/diagnostics/blomster/${www_sub}"
+else
+  echo "You do not have write permission to ${www_root}."
+  echo "Generated diagnostics is under:"
+  echo "$pwd/_build/html"
 fi
 
 # cleanup
