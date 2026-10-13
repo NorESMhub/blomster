@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#set -euox pipefail
-set -e
+set -eo pipefail
 
 PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 export JUPYTER_CONFIG_DIR="${PROJECT_DIR}/.jupyter"
