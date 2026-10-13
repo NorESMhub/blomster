@@ -6,6 +6,7 @@ dependencies:
   - cartopy=0.25.0
   - cftime=1.6.5
   - cmocean=4.0.3
+  - jq=1.8.2
   - jupyter-book=1.0.4.post1
   - matplotlib=3.10.3
   - nc-time-axis=1.4.1
@@ -16,6 +17,7 @@ dependencies:
   - python=3.13.3
   - sphinx=7.4.7
   - xarray=2025.4.0
+  - yq=4.4.5
   - pip:
     - gents
 prefix: /nird/datalake/NS16000B/blomster-env

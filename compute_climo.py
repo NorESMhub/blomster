@@ -69,7 +69,7 @@ for model, tags in models.items():          # blom, hamocc
 #           print(process.stdout)
 
 # Save generated climatology information to a YAML file
-settings_file = "settings.yml"
+settings_file = "notebooks/settings.yml"
 with open(settings_file, "r") as f:
     settings = yaml.safe_load(f)
 

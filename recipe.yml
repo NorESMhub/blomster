@@ -12,16 +12,16 @@ experiment:
   caseid      : n1850GaxgGHG.LM.nor30b25.528.20260928
   input_root  : /nird/datalake/NS9560K/noresm3/cases
   work_root   : /scratch/yanchun/diagnostics/blomster
-  www_root    : /nird/datapeak/NS9015K/www/diagnostics/blomster/yanchun
+  www_root    : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
   year_start  : 1596
   year_end    : 1600
 
 # -----------------------------------------
 #   Configuration for required variables
 # -----------------------------------------
-variables:  # required variables
-  blom:     # ocean component
-    hy:     # file tag
+variables:                        # required variables
+  blom:                           # ocean component
+    hy:                           # file tag
       climo: ['templvl','salnlvl',
         'idlagelvl']
         #'uvellvl','vvellvl', # rotate first
@@ -48,24 +48,26 @@ variables:  # required variables
 #   Jupyter notebooks for diagnostics
 # -----------------------------------------
 diagnostics:
-  - file: timeseries/intro.ipynb
-    sections:
-      - file: timeseries/transports.ipynb
-      - file: timeseries/global_averages.ipynb
-      - file: timeseries/AMOC.ipynb
-  - file: climatologies/intro.ipynb
-    sections:
-      - file: climatologies/annual.ipynb
-      - file: climatologies/seasonal.ipynb
-      - file: climatologies/Arctic_Ocean.ipynb
-  - file: ENSO/intro.ipynb
-    sections:
-       - file: ENSO/ENSO.ipynb
-  - file: MOC/intro.md
-    sections:
-      - file: MOC/MOC.ipynb
-  - file: meridional_fluxes/meridional_fluxes.ipynb
-  - file: zonal_mean/zonal_mean.ipynb
+  root: index.ipynb
+  chapters:
+    - file: timeseries/intro.ipynb
+      sections:
+        - file: timeseries/transports.ipynb
+        - file: timeseries/global_averages.ipynb
+        - file: timeseries/AMOC.ipynb
+    - file: climatologies/intro.ipynb
+      sections:
+        - file: climatologies/annual.ipynb
+        - file: climatologies/seasonal.ipynb
+        - file: climatologies/Arctic_Ocean.ipynb
+    - file: ENSO/intro.ipynb
+      sections:
+         - file: ENSO/ENSO.ipynb
+    - file: MOC/intro.md
+      sections:
+        - file: MOC/MOC.ipynb
+    - file: meridional_fluxes/meridional_fluxes.ipynb
+    - file: zonal_mean/zonal_mean.ipynb
 
 # -----------------------------------------
 #   Model grid files
