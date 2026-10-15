@@ -3,7 +3,7 @@
 # -----------------------------------------
 blomster:
   version: 0.1
-  source_root: /nird/datalake/NS16000B/blomster
+  source_root: /nird/home/nililiu/blomster
 
 # -----------------------------------------
 #   Configuration for the simulation
@@ -11,10 +11,10 @@ blomster:
 experiment:
   caseid      : n1850GaxgGHG.LM.nor30b25.528.20260928
   input_root  : /nird/datalake/NS9560K/noresm3/cases
-  work_root   : /scratch/yanchun/diagnostics/blomster
-  www_root    : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
-  year_start  : 1596
-  year_end    : 1600
+  work_root   : /scratch/nililiu/diagnostics/blomster
+  www_root    : /nird/datalake/NS9015K/www/diagnostics/blomster/nililiu
+  year_start  : 1686
+  year_end    : 1715
 
 # -----------------------------------------
 #   Configuration for required variables
@@ -89,7 +89,7 @@ datasets:
   PHC3.0:
     data_root: /nird/datalake/NS16000B/blomster/datasets/PHC3.0
     ANNUAL_file:
-      /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_annual1.nc
+      /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_annual.nc
     SEASONAL_file:
       /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_seasonal.nc
     MONTHLY_file:

@@ -11,7 +11,8 @@ do
     break
   fi
 done
-conda activate /nird/datalake/NS16000B/blomster-env
+# conda activate /nird/datalake/NS16000B/blomster-env
+conda activate /scratch/nililiu/conda/envs/blomster_env_nili
 
 # parse experiment info
 caseid=$(yq -r '.experiment.caseid' recipe.yml)
@@ -57,6 +58,6 @@ fi
 #for nbdir in $(cat recipe.yml|grep '\- file: ' |cut -d: -f2 |awk -F/ '{print $(NF-1)}' |uniq)
 ##for nbdir in $(yq -r '.diagnostics.root' recipe.yml) $(yq -r '.diagnostics.chapters' recipe.yml|grep 'file' |cut -d: -f2 |awk -F/ '{print $(NF-1)}' |uniq)
 #do
-  #echo $nbdir
-  #rm -rf $nbdir
+#  echo $nbdir
+#  rm -rf $nbdir
 #done
