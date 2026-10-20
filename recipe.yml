@@ -3,16 +3,15 @@
 # -----------------------------------------
 blomster:
   version: 0.1
-  source_root: /nird/home/nililiu/blomster
-
+  source_root: /nird/datalake/NS16000B/blomster
 # -----------------------------------------
 #   Configuration for the simulation
 # -----------------------------------------
 experiment:
   caseid      : n1850GaxgGHG.LM.nor30b25.528.20260928
   input_root  : /nird/datalake/NS9560K/noresm3/cases
-  work_root   : /scratch/nililiu/diagnostics/blomster
-  www_root    : /nird/datalake/NS9015K/www/diagnostics/blomster/nililiu
+  work_root   : /scratch/yanchun/diagnostics/blomster
+  www_root    : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
   year_start  : 1686
   year_end    : 1715
 

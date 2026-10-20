@@ -3,8 +3,6 @@ import numpy as np
 
 
 def surface():
-    import numpy as np
-    import xarray as xr
     """
     Load 2D field
 
@@ -39,14 +37,8 @@ def mean_at_depth(variable,files,depth):
     for i, file in enumerate(files, 1):
         time_coder = xr.coders.CFDatetimeCoder(use_cftime=True)
         with xr.open_dataset(file,decode_times=time_coder) as ds:
-            field = (
-                ds[variable]
-                .sel(depth=depth, method="nearest")
-                .squeeze()
-                .load()
-            )
+            field = (ds[variable].sel(depth=depth, method="nearest").squeeze().load())
             fields.append(field)
-            
     return xr.concat(fields, dim="year").mean("year")
 
 def deep_ocean_mask(
@@ -57,7 +49,7 @@ def deep_ocean_mask(
     lon_min=None,
     lon_max=None,
 ):
-    """create a mask for deep ocean region"""
+    """create a mask for deep Arctic ocean region"""
     mask = (
         grid["ocean"]
         & (grid["lat"] >= lat_min)
@@ -74,41 +66,17 @@ def deep_ocean_mask(
 
     return mask.rename("region_mask")
 
-def shared_quantile_levels(
-    data_list,
-    qmin=0.001,
-    qmax=0.999,
-    nlevels=21,
-):
+def shared_quantile_levels(data_list,qmin=0.001,qmax=0.999,nlevels=21):
     lower = []
     upper = []
-
     for data in data_list:
-        q = data.quantile(
-            [qmin, qmax],
-            dim=None,
-            skipna=True,
-        ).values
-
+        q = data.quantile([qmin, qmax], dim=None,skipna=True,).values
         lower.append(float(q[0]))
         upper.append(float(q[1]))
-
     vmin = min(lower)
     vmax = max(upper)
-
     return np.linspace(vmin, vmax, nlevels)
 
-def symmetric_quantile_levels(
-    data,
-    quantile=0.999,
-    nlevels=21,
-):
-    vmax = float(
-        abs(data).quantile(
-            quantile,
-            dim=None,
-            skipna=True,
-        )
-    )
-
+def symmetric_quantile_levels(data,quantile=0.999,nlevels=21,):
+    vmax = float(abs(data).quantile(quantile,dim=None,skipna=True))
     return np.linspace(-vmax, vmax, nlevels)

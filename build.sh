@@ -11,8 +11,8 @@ do
     break
   fi
 done
-# conda activate /nird/datalake/NS16000B/blomster-env
-conda activate /scratch/nililiu/conda/envs/blomster_env_nili
+ conda activate /nird/datalake/NS16000B/blomster-env
+
 
 # parse experiment info
 caseid=$(yq -r '.experiment.caseid' recipe.yml)
