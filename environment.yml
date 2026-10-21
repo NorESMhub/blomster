@@ -21,6 +21,7 @@ dependencies:
   - sphinx=7.4.7
   - xarray=2025.4.0
   - yq=4.4.5
+  - xesmf
   - pip:
     - gents
 prefix: /nird/datalake/NS16000B/blomster-env

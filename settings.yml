@@ -1,0 +1,75 @@
+blomster:
+  version: 0.1
+  source_root: /nird/datalake/NS16000B/blomster
+experiment:
+  caseid: n1850GaxgGHG.LM.nor30b25.528.20260928
+  input_root: /nird/datalake/NS9560K/noresm3/cases
+  work_root: /scratch/yanchun/diagnostics/blomster
+  www_root: /nird/datalake/NS9015K/www/diagnostics/blomster/nililiu
+  year_start: 1596
+  year_end: 1600
+grids:
+  tnx1v4:
+    data_root: /nird/datalake/NS16000B/blomster/grids/tnx1v4
+    grid_file: /nird/datalake/NS16000B/blomster/grids/tnx1v4/grid.nc
+    mask_nino3: /nird/datalake/NS16000B/blomster/grids/tnx1v4/mask_nino3.nc
+    mask_nino34: /nird/datalake/NS16000B/blomster/grids/tnx1v4/mask_nino34.nc
+datasets:
+  WOA13v2:
+    1deg:
+      data_root: /nird/datalake/NS16000B/blomster/datasets/WOA13/1deg
+  PHC3.0:
+    data_root: /nird/datalake/NS16000B/blomster/datasets/PHC3.0
+    ANNUAL_file: /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_annual.nc
+    SEASONAL_file: /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_seasonal.nc
+    MONTHLY_file: /nird/datalake/NS16000B/blomster/datasets/PHC3.0/phc3.0_annual.nc
+climos:
+  blom:
+    hy:
+      ANN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hy/n1850GaxgGHG.LM.nor30b25.528.20260928_ANN_159601_160012_climo.nc
+    hm:
+      JAN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_01_159601_160001_climo.nc
+      FEB: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_02_159602_160002_climo.nc
+      MAR: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_03_159603_160003_climo.nc
+      APR: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_04_159604_160004_climo.nc
+      MAY: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_05_159605_160005_climo.nc
+      JUN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_06_159606_160006_climo.nc
+      JUL: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_07_159607_160007_climo.nc
+      AUG: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_08_159608_160008_climo.nc
+      SEP: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_09_159609_160009_climo.nc
+      OCT: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_10_159610_160010_climo.nc
+      NOV: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_11_159611_160011_climo.nc
+      DEC: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_12_159612_160012_climo.nc
+      ANN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_ANN_159601_160012_climo.nc
+      DJF: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_DJF_159601_160012_climo.nc
+      MAM: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_MAM_159603_160005_climo.nc
+      JJA: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_JJA_159606_160008_climo.nc
+      SON: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/blom/hm/n1850GaxgGHG.LM.nor30b25.528.20260928_SON_159609_160011_climo.nc
+  hamocc:
+    hbgcy:
+      ANN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcy/n1850GaxgGHG.LM.nor30b25.528.20260928_ANN_159601_160012_climo.nc
+    hbgcm:
+      JAN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_01_159601_160001_climo.nc
+      FEB: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_02_159602_160002_climo.nc
+      MAR: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_03_159603_160003_climo.nc
+      APR: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_04_159604_160004_climo.nc
+      MAY: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_05_159605_160005_climo.nc
+      JUN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_06_159606_160006_climo.nc
+      JUL: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_07_159607_160007_climo.nc
+      AUG: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_08_159608_160008_climo.nc
+      SEP: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_09_159609_160009_climo.nc
+      OCT: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_10_159610_160010_climo.nc
+      NOV: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_11_159611_160011_climo.nc
+      DEC: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_12_159612_160012_climo.nc
+      ANN: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_ANN_159601_160012_climo.nc
+      DJF: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_DJF_159601_160012_climo.nc
+      MAM: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_MAM_159603_160005_climo.nc
+      JJA: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_JJA_159606_160008_climo.nc
+      SON: /scratch/yanchun/diagnostics/blomster/n1850GaxgGHG.LM.nor30b25.528.20260928/hamocc/hbgcm/n1850GaxgGHG.LM.nor30b25.528.20260928_SON_159609_160011_climo.nc
+timeseries:
+  blom:
+    hy: {}
+    hm: {}
+  hamocc:
+    hbgcy: {}
+    hbgcm: {}

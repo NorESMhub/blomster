@@ -2,6 +2,8 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.path as mpath
 
 def plot_map2d(lon, lat, var, proj='PlateCarree', norm=None, cmap=mpl.colormaps['viridis']):
     """
@@ -22,6 +24,8 @@ def plot_map2d(lon, lat, var, proj='PlateCarree', norm=None, cmap=mpl.colormaps[
         proj = ccrs.PlateCarree(central_longitude=90.0)
     elif proj == 'NearsidePerspective':
         proj = ccrs.NearsidePerspective(central_longitude=0.0, central_latitude=80.0, satellite_height=3e6)
+    elif proj == "NorthPolarStereo":
+        proj = ccrs.NorthPolarStereo(central_longitude=0.0)
     else:
         print("Unknown projection type. Use PlateCarree instead.")
         proj = ccrs.PlateCarree(central_longitude=90.0)
