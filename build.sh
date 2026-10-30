@@ -11,15 +11,17 @@ do
     break
   fi
 done
- conda activate /nird/datalake/NS16000B/blomster-env
+conda activate /nird/datalake/NS16000B/blomster-env
 
 
 # parse experiment info
 caseid=$(yq -r '.experiment.caseid' recipe.yml)
 year_start=$(yq -r '.experiment.year_start' recipe.yml)
 year_end=$(yq -r '.experiment.year_end' recipe.yml)
+work_root=$(yq -r '.experiment.work_root' recipe.yml)
 www_root=$(yq -r '.experiment.www_root' recipe.yml)
 project=$(echo $www_root |grep -oP 'NS\d+K' |tr '[:upper:]' '[:lower:]')
+user=$(echo $work_root |cut -d/ -f3)
 if echo $www_root | grep 'datalake' >/dev/null 2>&1 ; then
   dataservice='datalake'
 else
@@ -34,7 +36,7 @@ python configure.py
 python compute_climo.py
 
 # build the book
-jupyter-book clean notebooks
+#jupyter-book clean notebooks --all
 jupyter-book build -qq -n notebooks
 
 # Backup configs 
@@ -47,7 +49,7 @@ if test -w ${www_root} ; then
   mkdir -p ${www_root}/${www_sub}
   rsync -au --delete --remove-source-files notebooks/_build/html/ ${www_root}/${www_sub}
   echo 'Gedneratd diagnostics is at:'
-  echo "https://${project}.web.sigma2.no/${dataservice}/diagnostics/blomster/${www_sub}"
+  echo "https://${project}.web.sigma2.no/${dataservice}/diagnostics/blomster/$user/${www_sub}"
 else
   echo "You do not have write permission to ${www_root}."
   echo "Generated diagnostics is under:"

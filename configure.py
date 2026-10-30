@@ -42,24 +42,24 @@ with open('notebooks/_toc.yml', 'w') as f:
 #        log_level="ERROR",
 #    )
 
-# prepare notebooks (only inject to the index.ipynb)
-notebooks = Path("notebooks")
-pynbs = sorted([notebooks / "index.ipynb"])
-pynbs = [
-    p for p in pynbs
-    if not p.name.startswith("intro")
-    and not any(part.startswith(".") for part in p.parts)
-]
-
-for pynb in pynbs:
-    out  = pynb
-    pm.execute_notebook(
-        str(pynb),
-        str(out),
-        parameters=cfg['experiment'],
-        prepare_only=True,
-        log_level="ERROR",
-    )
+## prepare notebooks (only inject to the index.ipynb)
+#notebooks = Path("notebooks")
+#pynbs = sorted([notebooks / "index.ipynb"])
+#pynbs = [
+#    p for p in pynbs
+#    if not p.name.startswith("intro")
+#    and not any(part.startswith(".") for part in p.parts)
+#]
+#
+#for pynb in pynbs:
+#    out  = pynb
+#    pm.execute_notebook(
+#        str(pynb),
+#        str(out),
+#        parameters=cfg['experiment'],
+#        prepare_only=True,
+#        log_level="ERROR",
+#    )
 
 # save settings to a YAML file
 settings = {}

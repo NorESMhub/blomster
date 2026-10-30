@@ -11,14 +11,13 @@ import yaml
 with open("recipe.yml") as f:
     cfg = yaml.safe_load(f)
     experiment = cfg["experiment"]
-    models = cfg["variables"]
+    variables = cfg["variables"]
     caseid = experiment["caseid"]
     input_root = experiment["input_root"]
     work_root = experiment["work_root"]
     year_start = experiment["year_start"]
     year_end = experiment["year_end"]
     
-
 # define the frequency mapping for each tag
 freq={"hy": "ann", "hm": "mth", "hbgcy": "ann", "hbgcm": "mth"}
 
@@ -26,8 +25,8 @@ freq={"hy": "ann", "hm": "mth", "hbgcy": "ann", "hbgcm": "mth"}
 env = os.environ.copy()
 env['NCO_PATH_OVERRIDE'] = 'No'
 
-for model, tags in models.items():          # blom, hamocc
-    for tag, entry in tags.items():         # hy, hm, hbgcy, hbgcm
+for model, tags in variables.items():       # model: [blom, hamocc]
+    for tag, entry in tags.items():         # tag: [hy, hm, hbgcy, hbgcm]
         climo = entry["climo"]
         if not climo:
             continue
@@ -113,9 +112,6 @@ settings["timeseries"] = copy.deepcopy(settings["climos"])
 #sys.exit(0)
 
 # Common configuration based on your ncclimo output
-#case_id = "n1850GaxgGHG.LM.nor30b25.528.20260928"
-#start_year = "1596"
-#end_year = "1600"
 suffix = "climo.nc"
 
 # Define seasons with their respective start and end months (ncclimo standard)

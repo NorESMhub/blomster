@@ -8,12 +8,12 @@ blomster:
 #   Configuration for the simulation
 # -----------------------------------------
 experiment:
-  caseid      : n1850GaxgGHG.LM.nor30b25.528.20260928
+  caseid      : n1850GHGGaxg.LM.nor30b27.002.20261016
   input_root  : /nird/datalake/NS9560K/noresm3/cases
   work_root   : /scratch/yanchun/diagnostics/blomster
   www_root    : /nird/datalake/NS9560K/www/diagnostics/blomster/yanchun
-  year_start  : 1686
-  year_end    : 1715
+  year_start  : 0001
+  year_end    : 0050
 
 # -----------------------------------------
 #   Configuration for required variables
