@@ -75,6 +75,7 @@ grids:
   tnx1v4:
     data_root: /nird/datalake/NS16000B/blomster/grids/tnx1v4
     grid_file: /nird/datalake/NS16000B/blomster/grids/tnx1v4/grid.nc
+    region_file: /nird/datalake/NS16000B/blomster/grids/tnx1v4/regions.nc
     mask_nino3: /nird/datalake/NS16000B/blomster/grids/tnx1v4/mask_nino3.nc
     mask_nino34: /nird/datalake/NS16000B/blomster/grids/tnx1v4/mask_nino34.nc
 
