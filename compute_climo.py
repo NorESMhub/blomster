@@ -4,11 +4,16 @@ import calendar
 import copy
 import os
 import subprocess
-import sys
+
+#import sys
+from pathlib import Path
 
 import yaml
+from pyprojroot import here
+# Get project root
+root_path = Path(here())
 
-with open("recipe.yml") as f:
+with open(root_path.joinpath('recipe.yml')) as f:
     cfg = yaml.safe_load(f)
     experiment = cfg["experiment"]
     variables = cfg["variables"]
@@ -69,7 +74,7 @@ for model, tags in variables.items():       # model: [blom, hamocc]
 
 # Save generated climatology information to a YAML file
 settings_file = "notebooks/settings.yml"
-with open(settings_file, "r") as f:
+with open(root_path.joinpath(settings_file), "r") as f:
     settings = yaml.safe_load(f)
 
 settings["climos"] = {
@@ -165,5 +170,5 @@ settings['climos']['hamocc']['hbgcy']['ANN'] = f"{work_root}/{caseid}/hamocc/hbg
 #}
 
 # Write the structure to a YAML file
-with open(settings_file, "w") as f:
+with open(root_path.joinpath(settings_file), "w") as f:
     yaml.dump(settings, f, default_flow_style=False, sort_keys=False)
