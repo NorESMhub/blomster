@@ -25,5 +25,5 @@ dependencies:
   - yq=4.4.5
   - xesmf
   - pip:
-    - gents
+    - .
 prefix: /nird/datalake/NS16000B/blomster-env
