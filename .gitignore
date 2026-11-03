@@ -70,14 +70,20 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+_build/
+_toc.yml
 
 # PyBuilder
 .pybuilder/
 target/
 
 # Jupyter Notebook
+.jupyter
+.jupyter_runtime
 .ipynb_checkpoints
+notebooks/settings.yml
+notebooks/_toc.yml
+
 
 # IPython
 profile_default/

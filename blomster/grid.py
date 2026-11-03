@@ -16,6 +16,7 @@ def load(grid_file, grid_type='p'):
         lon = grid[grid_type + 'lon'].data
         clat = grid[grid_type + 'clat'].data
         clon = grid[grid_type + 'clon'].data
+        mask= grid[grid_type + 'mask'].data
 
     dims = [x + 1 for x in list(lat.shape)]
     clat_new = np.zeros(dims)
@@ -30,5 +31,5 @@ def load(grid_file, grid_type='p'):
     clon_new[-1, 0:-1] = clon[3, -1, :]
     clon_new[-1, -1] = clon[2, -1, -1]
 
-    return lat, lon, clat_new, clon_new
+    return lat, lon, clat_new, clon_new, mask
 
