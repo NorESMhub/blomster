@@ -13,7 +13,6 @@ do
 done
 conda activate /nird/datalake/NS16000B/blomster-env
 
-
 # parse experiment info
 caseid=$(yq -r '.experiment.caseid' recipe.yml)
 year_start=$(yq -r '.experiment.year_start' recipe.yml)
