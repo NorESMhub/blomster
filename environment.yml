@@ -20,6 +20,7 @@ dependencies:
   - pip=26.2.1
   - python=3.13.3
   - pyprojroot=0.3.0
+  - ruamel=1.0
   - sphinx=7.4.7
   - xarray=2025.4.0
   - yq=4.4.5
