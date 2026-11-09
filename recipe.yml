@@ -63,24 +63,28 @@ variables:                        # required variables
 diagnostics:
   root: index.ipynb
   chapters:
-    - file: timeseries/intro.ipynb
+    - file: BLOM/intro.ipynb
       sections:
-        - file: timeseries/transports.ipynb
-        - file: timeseries/global_averages.ipynb
-        - file: timeseries/AMOC.ipynb
-    - file: climatologies/intro.ipynb
-      sections:
-        - file: climatologies/annual.ipynb
-        - file: climatologies/seasonal.ipynb
-        - file: climatologies/Arctic_Ocean.ipynb
-    - file: ENSO/intro.ipynb
-      sections:
-         - file: ENSO/ENSO.ipynb
-    - file: MOC/intro.md
-      sections:
-        - file: MOC/MOC.ipynb
-    - file: meridional_fluxes/meridional_fluxes.ipynb
-    - file: zonal_mean/zonal_mean.ipynb
+        - file: BLOM/timeseries/intro.ipynb
+          sections:
+            - file: BLOM/timeseries/transports.ipynb
+            - file: BLOM/timeseries/global_averages.ipynb
+            - file: BLOM/timeseries/AMOC.ipynb
+        - file: BLOM/climatologies/intro.ipynb
+          sections:
+            - file: BLOM/climatologies/annual.ipynb
+            - file: BLOM/climatologies/seasonal.ipynb
+        - file: BLOM/ENSO/intro.ipynb
+          sections:
+             - file: BLOM/ENSO/ENSO.ipynb
+        - file: BLOM/MOC/intro.md
+          sections:
+            - file: BLOM/MOC/MOC.ipynb
+        - file: BLOM/meridional_fluxes/meridional_fluxes.ipynb
+        - file: BLOM/zonal_mean/zonal_mean.ipynb
+        - file: BLOM/AO/Arctic_Ocean.ipynb
+    - file: HAMOCC/intro.ipynb
+    - file: CICE/intro.ipynb
 
 # -----------------------------------------
 #   Model grid files
