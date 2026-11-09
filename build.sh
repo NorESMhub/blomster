@@ -17,8 +17,8 @@ conda activate /nird/datalake/NS16000B/blomster-env
 caseid=$(yq -r '.experiment.caseid' recipe.yml)
 year_start=$(yq -r '.experiment.year_start' recipe.yml)
 year_end=$(yq -r '.experiment.year_end' recipe.yml)
-work_root=$(yq -r '.experiment.work_root' recipe.yml)
-www_root=$(yq -r '.experiment.www_root' recipe.yml)
+www_root=$(yq -r '.jupyterbook.www_root' recipe.yml)
+work_root=$(yq -r '.workdir.work_root' recipe.yml)
 project=$(echo $www_root |grep -oP 'NS\d+K' |tr '[:upper:]' '[:lower:]')
 user=$(echo $work_root |cut -d/ -f3)
 if echo $www_root | grep 'datalake' >/dev/null 2>&1 ; then
