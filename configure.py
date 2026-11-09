@@ -13,7 +13,6 @@ yaml=YAML()
 with open(root_path.joinpath('recipe.yml'), 'r') as f:
     cfg = yaml.load(f)
 
-
 # generate TOC
 toc = {}
 toc = {
@@ -36,25 +35,6 @@ with open(root_path.joinpath('notebooks/_toc.yml'), 'w') as f:
 #for pynb in pynbs:
 #    out = pynb.relative_to(notebooks)
 #    out.parent.mkdir(parents=True, exist_ok=True)
-#    pm.execute_notebook(
-#        str(pynb),
-#        str(out),
-#        parameters=cfg['experiment'],
-#        prepare_only=True,
-#        log_level="ERROR",
-#    )
-
-## prepare notebooks (only inject to the index.ipynb)
-#notebooks = Path("notebooks")
-#pynbs = sorted([notebooks / "index.ipynb"])
-#pynbs = [
-#    p for p in pynbs
-#    if not p.name.startswith("intro")
-#    and not any(part.startswith(".") for part in p.parts)
-#]
-#
-#for pynb in pynbs:
-#    out  = pynb
 #    pm.execute_notebook(
 #        str(pynb),
 #        str(out),
