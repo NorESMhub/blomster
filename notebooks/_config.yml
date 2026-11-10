@@ -41,8 +41,8 @@ execute:
   timeout: -1      # seconds; or -1 for no limit
 
 # Exclude building files
-exclude_patterns:
-  - notebooks/*.ipynb
+#exclude_patterns:
+#  - notebooks/*.ipynb
 
 only_build_toc_files: true
 
