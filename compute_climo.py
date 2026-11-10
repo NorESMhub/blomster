@@ -119,20 +119,22 @@ for model, tags in variables.items():       # model: [blom, cice]
             print("Skip computing existing climotologies..")
 
         # Monthly files (01 to 12)
+        yyyy1 = f"{year_start:04d}"
+        yyyy2 = f"{year_end:04d}"
         for i in range(1, 13):
-            m = f"{i:02d}"
+            mm = f"{i:02d}"
             mth = calendar.month_abbr[i].upper()
-            fname = f"{caseid}_{m}_{year_start}{m}_{year_end}{m}_{suffix}"
+            fname = f"{caseid}_{mm}_{yyyy1}{mm}_{yyyy2}{mm}_{suffix}"
             settings['climos'][model][tag][mth] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
         
         # Seasonal files
         for climo_period, (start_m, end_m) in seasons_meta.items():
-            fname = f"{caseid}_{climo_period}_{year_start}{start_m}_{year_end}{end_m}_{suffix}"
+            fname = f"{caseid}_{climo_period}_{yyyy1}{start_m}_{yyyy2}{end_m}_{suffix}"
             settings['climos'][model][tag][climo_period] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
 
         # ANN files
         start_m, end_m = seasons_meta["ANN"]
-        fname = f"{caseid}_ANN_{year_start}{start_m}_{year_end}{end_m}_{suffix}"
+        fname = f"{caseid}_ANN_{yyyy1}{start_m}_{yyyy2}{end_m}_{suffix}"
         settings['climos'][model][tag]['ANN'] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
 
 # Write the structure to a YAML file
