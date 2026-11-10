@@ -6,7 +6,6 @@ from . import analysis, climatology, grid, plots, timeseries
 # Expose analysis functions from the main package level
 from .analysis import (
     deep_ocean_mask,
-    load_ocean_grid,
     mean_at_depth,
     shared_quantile_levels,
     surface,
@@ -14,7 +13,7 @@ from .analysis import (
 )
 
 # Expose the BLOM grid loader
-from .grid import load
+from .grid import load, read_strait_indices
 
 # Expose plotting functions
 from .plots import plot_map2d
@@ -26,7 +25,7 @@ __all__ = [
     "deep_ocean_mask",
     "grid",
     "load",
-    "load_ocean_grid",
+    "read_strait_indices",
     "mean_at_depth",
     "plot_map2d",
     "plots",
