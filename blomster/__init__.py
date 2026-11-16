@@ -16,7 +16,7 @@ from .analysis import (
 from .grid import load, read_strait_indices
 
 # Expose plotting functions
-from .plots import plot_map2d
+from .plots import plot_map2d, set_circular_boundary
 
 # Define what gets imported when someone runs `from blomster import *`
 __all__ = [
@@ -29,6 +29,7 @@ __all__ = [
     "mean_at_depth",
     "plot_map2d",
     "plots",
+    "set_circular_boundary",
     "shared_quantile_levels",
     "surface",
     "symmetric_quantile_levels",
