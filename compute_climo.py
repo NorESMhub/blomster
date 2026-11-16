@@ -96,7 +96,7 @@ for model, tags in variables.items():       # model: [blom, cice]
                 mdl_nm = 'micom'
         # ncclimo arguments
         args = [
-            "nco/ncclimo",
+            "utils/ncclimo",
             "-m", mdl_nm,
             "-h", tag,
             f"--clm_md={freq[tag]}",
