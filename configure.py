@@ -10,7 +10,7 @@ root_path = Path(here())
 
 # load recipe
 yaml=YAML()
-with open(root_path.joinpath('recipe.yml'), 'r') as f:
+with open(root_path.joinpath('recipe_dev.yml'), 'r') as f:
     cfg = yaml.load(f)
 
 # generate TOC
@@ -53,5 +53,5 @@ settings = {
     "datasets": cfg["datasets"]
 }
 
-with open(root_path.joinpath('notebooks/settings.yml'), "w") as f:
+with open(root_path.joinpath('notebooks/diagnostics.yml'), "w") as f:
     yaml.dump(settings, f)

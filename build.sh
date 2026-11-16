@@ -40,7 +40,7 @@ jupyter-book clean notebooks --all
 jupyter-book build -qq -n notebooks
 
 # Backup configs 
-cp recipe.yml notebooks/{_config.yml,_toc.yml,settings.yml} notebooks/_build/jupyter_execute/
+cp recipe.yml notebooks/{_config.yml,_toc.yml,diagnostics.yml} notebooks/_build/jupyter_execute/
 
 # Publish
 chmod -R g+w notebooks/_build/html

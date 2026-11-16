@@ -43,11 +43,11 @@ realm = {
 }
 
 # Save generated climatology information to a YAML file
-settings_file = "notebooks/settings.yml"
-with open(root_path.joinpath(settings_file), "r") as f:
-    settings = yaml.load(f)
+diagnostics_file = "notebooks/diagnostics.yml"
+with open(root_path.joinpath(diagnostics_file), "r") as f:
+    diagnostics = yaml.load(f)
 
-settings["climos"] = {
+diagnostics["climos"] = {
     "blom": {
         "hy": {},
         "hm": {},
@@ -59,7 +59,7 @@ settings["climos"] = {
         "h1": {},
     }
 }
-settings["timeseries"] = copy.deepcopy(settings["climos"])
+diagnostics["timeseries"] = copy.deepcopy(diagnostics["climos"])
 
 # Common configuration based on your ncclimo output
 suffix = "climo.nc"
@@ -136,18 +136,18 @@ for model, tags in variables.items():       # model: [blom, cice]
             mm = f"{i:02d}"
             mth = calendar.month_abbr[i].upper()
             fname = f"{caseid}_{mm}_{yyyy1}{mm}_{yyyy2}{mm}_{suffix}"
-            settings['climos'][model][tag][mth] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
+            diagnostics['climos'][model][tag][mth] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
         
         # Seasonal files
         for climo_period, (start_m, end_m) in seasons_meta.items():
             fname = f"{caseid}_{climo_period}_{yyyy1}{start_m}_{yyyy2}{end_m}_{suffix}"
-            settings['climos'][model][tag][climo_period] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
+            diagnostics['climos'][model][tag][climo_period] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
 
         # ANN files
         start_m, end_m = seasons_meta["ANN"]
         fname = f"{caseid}_ANN_{yyyy1}{start_m}_{yyyy2}{end_m}_{suffix}"
-        settings['climos'][model][tag]['ANN'] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
+        diagnostics['climos'][model][tag]['ANN'] = f"{work_root}/{caseid}/{model}.{tag}/{fname}"
 
 # Write the structure to a YAML file
-with open(root_path.joinpath(settings_file), "w") as f:
-    yaml.dump(settings, f)
+with open(root_path.joinpath(diagnostics_file), "w") as f:
+    yaml.dump(diagnostics, f)

@@ -81,7 +81,7 @@ target/
 .jupyter
 .jupyter_runtime
 .ipynb_checkpoints
-notebooks/settings.yml
+notebooks/diagnostics.yml
 notebooks/_toc.yml
 
 
